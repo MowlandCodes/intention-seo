@@ -1,1 +1,1 @@
-# Intention - Intent-Driven SEO Content Intelligence
+# Intention - Intent-Driven SEO Content Intelligence Engine
