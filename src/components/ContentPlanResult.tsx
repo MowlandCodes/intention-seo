@@ -53,7 +53,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 text-zinc-100">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 flex flex-col">
+        <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800 flex flex-col">
           <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider flex items-center gap-2">
             <Target className="w-4 h-4 text-emerald-400" /> Search Intent
           </span>
@@ -66,7 +66,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
           </div>
         </div>
 
-        <div className="md:col-span-2 p-5 rounded-xl bg-zinc-900 border border-zinc-800">
+        <div className="md:col-span-2 p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800">
           <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider flex items-center gap-2">
             <Layers className="w-4 h-4 text-indigo-400" /> Target Audience
           </span>
@@ -74,7 +74,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
             {data.targetAudience.map((aud, i) => (
               <span
                 key={i}
-                className="px-2.5 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded-md text-zinc-300"
+                className="px-2.5 py-1 text-xs bg-zinc-800/40 backdrop-blur-lg border border-zinc-700 rounded-md text-zinc-300"
               >
                 {aud}
               </span>
@@ -84,7 +84,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
       </div>
 
       {data.contentGapAnalysis?.length > 0 && (
-        <div className="p-5 rounded-xl bg-amber-950/20 border border-amber-500/30 text-amber-200">
+        <div className="p-5 rounded-xl bg-amber-950/20 backdrop-blur-lg border border-amber-500/30 text-amber-200">
           <h3 className="text-sm font-semibold flex items-center gap-2 text-amber-400 mb-2">
             <AlertCircle className="w-4 h-4" /> Content Gap Opportunities
             (Versus Top SERP Competitors)
@@ -97,7 +97,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
         </div>
       )}
 
-      <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-4">
+      <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800 space-y-4">
         <div className="flex justify-between items-center">
           <h3 className="text-sm font-semibold text-zinc-300 flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-400" /> Optimized Meta Tags
@@ -109,7 +109,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
                 "meta",
               )
             }
-            className="text-xs bg-zinc-800 hover:bg-zinc-700 px-3 py-1.5 rounded-md border border-zinc-700 transition flex items-center gap-1.5"
+            className="text-xs bg-zinc-800/40 backdrop-blur-lg hover:bg-zinc-700/40 px-3 py-1.5 rounded-md border border-zinc-700 transition flex items-center gap-1.5"
           >
             {copiedField === "meta" ? (
               <Check className="w-3.5 h-3.5 text-emerald-400" />
@@ -121,7 +121,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
         </div>
 
         <div className="space-y-3 text-sm">
-          <div className="p-3 bg-zinc-950 rounded-lg border border-zinc-800">
+          <div className="p-3 bg-zinc-950/40 backdrop-blur-lg rounded-lg border border-zinc-800">
             <span className="text-xs text-zinc-500 block mb-1">
               Meta Title ({data.metaTags.title.length} chars)
             </span>
@@ -129,7 +129,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
               {data.metaTags.title}
             </p>
           </div>
-          <div className="p-3 bg-zinc-950 rounded-lg border border-zinc-800">
+          <div className="p-3 bg-zinc-950/40 backdrop-blur-lg rounded-lg border border-zinc-800">
             <span className="text-xs text-zinc-500 block mb-1">
               Meta Description ({data.metaTags.description.length} chars)
             </span>
@@ -139,7 +139,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800">
+        <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800">
           <h3 className="text-sm font-semibold text-zinc-300 mb-3 flex items-center gap-2">
             <FileText className="w-4 h-4 text-blue-400" /> Catchy Article Titles
           </h3>
@@ -165,7 +165,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
           </ul>
         </div>
 
-        <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800">
+        <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800">
           <h3 className="text-sm font-semibold text-zinc-300 mb-3">
             Long-Tail Related Keywords
           </h3>
@@ -182,7 +182,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
         </div>
       </div>
 
-      <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-4">
+      <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800 space-y-4">
         <h3 className="text-sm font-semibold text-zinc-300">
           Suggested Structured Article Outline
         </h3>
@@ -190,7 +190,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
           {data.contentOutline.map((item, i) => (
             <div
               key={i}
-              className={`p-4 rounded-lg bg-zinc-950 border border-zinc-800 ${
+              className={`p-4 rounded-lg bg-zinc-950/40 backdrop-blur-lg border border-zinc-800 ${
                 item.level === "H3"
                   ? "ml-6 border-l-2 border-l-indigo-500/50"
                   : ""
@@ -201,7 +201,7 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
                   className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
                     item.level === "H2"
                       ? "bg-indigo-500/20 text-indigo-300"
-                      : "bg-zinc-800 text-zinc-400"
+                      : "bg-zinc-800/40 text-zinc-400"
                   }`}
                 >
                   {item.level}

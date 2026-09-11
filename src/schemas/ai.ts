@@ -36,9 +36,9 @@ export const seoPlanSchema: Schema = {
     relatedKeywords: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "List of 5-8 related long-tail keywords",
-      minItems: "5",
-      maxItems: "8",
+      description: "List of 6-12 related long-tail keywords",
+      minItems: "6",
+      maxItems: "12",
     },
     contentOutline: {
       type: Type.ARRAY,
