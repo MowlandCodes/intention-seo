@@ -49,8 +49,8 @@ export default function EngineCapabilities() {
             Structured Outline & Meta
           </h4>
           <p className="text-xs text-zinc-400 leading-relaxed">
-            Generasi judul harian SEO-friendly, Meta Tags siap-copy, dan
-            struktur heading H2/H3 terencana.
+            Merekomendasikan judul serta outline konten yang SEO-friendly, Meta
+            Tags siap-copy, dan struktur heading H2/H3 yang terencana.
           </p>
         </div>
       </div>
