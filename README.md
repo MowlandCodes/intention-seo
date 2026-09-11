@@ -148,13 +148,4 @@ intention-seo/
 
 ---
 
-## 📝 Submission Checklist
-
-- [x] **Live Demo**: \`https://your-intention-app.vercel.app\`
-- [x] **Public GitHub Repo**: \`https://github.com/MowlandCodes/intention-seo\`
-- [x] **Core Features**: Intent Analysis, SERP Gap Analysis, Meta Tags, & Content Outline
-- [x] **Deploy Status**: Fully Deployed & Operational
-
----
-
 Developed by **M. Faridh Maulana** (Mowland Codes).

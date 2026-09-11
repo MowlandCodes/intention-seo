@@ -43,13 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-zinc-950 text-zinc-100 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col justify-between relative`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-zinc-950 text-zinc-100 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col relative`}
       >
         <AuroraBackground />
 
-        <div className="relative z-10 flex flex-col min-h-screen justify-between">
+        <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
         </div>
       </body>
