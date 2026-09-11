@@ -98,7 +98,7 @@ export default function HeroSection({
           className="gsap-search opacity-0 mt-6 max-w-2xl mx-auto relative flex items-center"
         >
           <div className="relative w-full">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500 z-1" />
             <input
               type="text"
               value={keyword}
