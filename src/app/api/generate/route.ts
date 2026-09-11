@@ -1,25 +1,39 @@
 import { seoPlanSchema } from "@/schemas/ai";
-import { fetchSerp } from "@/utils/ai";
+import { fetchSerp, SerpResult } from "@/utils/ai";
 import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { NextResponse } from "next/server";
+
+if (!process.env.GEMINI_API_KEY) {
+  throw new Error("GEMINI_API_KEY environment variable is not set");
+}
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function POST(request: Request) {
-  try {
-    const { keyword } = await request.json();
+  let serp: SerpResult = {
+    organicResults: [],
+    peopleAlsoAsk: [],
+    relatedSearches: [],
+  };
 
-    if (!keyword || typeof keyword !== "string") {
+  try {
+    const { keyword: rawKeyword } = (await request.json()) as {
+      keyword: string;
+    };
+
+    if (!rawKeyword || typeof rawKeyword !== "string") {
       return NextResponse.json(
         { status: "failure", message: "Invalid keyword", data: null },
         { status: 400 },
       );
     }
 
+    const keyword = rawKeyword.trim();
+
     const SYSTEM_PROMPT = `You are Intention-AI, a professional & elite SEO Strategist and Content Intelligence Engine. Your task is to analyze a given keyword rigorously and produce a high-quality and high-value ACTIONABLE SEO Content Strategy & Insights. ALWAYS adhere STRICTLY to the requested JSON Structure and NEVER deviate from it.`;
 
     // Fetch Real-time SERP (Search Engine Results Page / Google Search) Data
-    const serp = await fetchSerp(keyword);
+    serp = await fetchSerp(keyword);
     const enrichedPrompt = `Analyze this keyword: "${keyword}".
       Current live Google SERP data (treat this as ground truth for what's actually ranking today, don't rely only on prior knowledge):
 

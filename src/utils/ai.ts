@@ -11,7 +11,7 @@ interface OrganicResult {
   snippet: string;
 }
 
-interface SerpResult {
+export interface SerpResult {
   organicResults: OrganicResult[];
   peopleAlsoAsk: string[];
   relatedSearches: string[];
@@ -26,6 +26,7 @@ export async function fetchSerp(keyword: string): Promise<SerpResult> {
         "X-API-KEY": SERPER_API_KEY,
       },
       body: JSON.stringify({ q: keyword }),
+      signal: AbortSignal.timeout(1000 * 10), // 10 seconds timeout
     });
 
     const data = await res.json();
@@ -47,7 +48,12 @@ export async function fetchSerp(keyword: string): Promise<SerpResult> {
     };
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(err.message);
+      const error =
+        err.name === "TimeoutError"
+          ? new Error("Request Timed Out")
+          : new Error(err.message);
+
+      throw error;
     }
     throw new Error("An unknown error occurred", { cause: err });
   }
