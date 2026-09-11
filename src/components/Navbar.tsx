@@ -1,13 +1,12 @@
 import { FaGithub } from "react-icons/fa6";
+import Logo from "@/components/Logo";
 
 export default function Navbar() {
   return (
     <header className="border-b border-zinc-800/80 bg-zinc-750/60 backdrop-blur-xl sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-sm font-mono">
-            IN
-          </div>
+          <Logo size={42} />
           <div>
             <span className="font-bold text-white flex items-center tracking-tight gap-0.5 text-lg">
               Intention
