@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "@/assets/styles/globals.css";
 import { Sparkles } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
@@ -54,7 +54,7 @@ export default function RootLayout({
                 <span className="font-bold text-white flex items-center tracking-tight gap-0.5 text-lg">
                   Intention
                   <span className="bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-400 bg-clip-text text-transparent">
-                    SEO
+                    AI
                   </span>
                 </span>
               </div>
