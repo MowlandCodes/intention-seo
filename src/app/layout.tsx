@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "@/assets/styles/globals.css";
 import Navbar from "@/components/Navbar";
@@ -47,6 +48,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-zinc-950 text-zinc-100 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col relative`}
       >
         <Analytics />
+        <SpeedInsights />
         <AuroraBackground />
 
         <div className="relative z-10 flex flex-col min-h-screen">
