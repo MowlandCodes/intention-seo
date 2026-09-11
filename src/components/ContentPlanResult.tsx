@@ -53,13 +53,13 @@ export function ContentPlanResult({ data }: { data: SeoPlanData }) {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 text-zinc-100">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800 flex flex-col">
+        <div className="p-5 rounded-xl bg-zinc-900/40 backdrop-blur-lg border border-zinc-800 flex flex-col gap-4">
           <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider flex items-center gap-2">
             <Target className="w-4 h-4 text-emerald-400" /> Search Intent
           </span>
           <div className="flex h-full justify-center items-center">
             <span
-              className={`text-2xl font-bold px-4 py-2 border rounded-full ${intentColor}`}
+              className={`text-md lg:text-lg xl:text-xl font-bold px-4 py-2 border rounded-full ${intentColor}`}
             >
               {data.searchIntent}
             </span>
